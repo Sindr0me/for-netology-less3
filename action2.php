@@ -45,33 +45,9 @@ echo '<pre>';
 var_dump($name_two_words);
 echo '<pre>';
 
- // 1 слово статика, 2 рандомное упростил вариант
-foreach($name_two_words as $name){
-    $parts = explode(' ', $name);
-    $first[] = $parts[0];
-    $second[] = $parts[1];
-}
 
-$random_second_word = [];
- 
-while (count($random_second_word) < count($name_two_words)){
-    $proverka = $second[rand(0, count($name_two_words)-1)];
-    if (!in_array($proverka, $random_second_word)) {
-        array_push($random_second_word, $proverka);
-    }
-}
- 
-$final_result = [];
- 
-for($i = 0; $i < count($name_two_words); $i++){
-    $final_result[]= $first[$i] . ' ' . $random_second_word[$i];  
-}
- 
-var_dump($final_result);
-
-
-
-
+$first = [];
+$second = [];
 
 // перемешка 2 слов с помощью shuffle
 foreach($name_two_words as $name){
@@ -88,3 +64,5 @@ for($i = 0; $i < count($name_two_words); $i++){
 }
 
 var_dump($final_result2);
+
+
